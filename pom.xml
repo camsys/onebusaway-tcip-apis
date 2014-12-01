@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>onebusaway</artifactId>
+        <groupId>org.onebusaway</groupId>
+        <version>1.0.7</version>
+        <!-- took version from onebusaway-nyc -->
+    </parent>
+    <artifactId>onebusaway-tcip-apis</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>onebusaway-tcip-apis</name>
+    <description>Parent POM module for all OneBusAway TCIP API modules.</description>
+    <distributionManagement>
+        <repository>
+            <id>releases-mvn-repo</id>
+            <url>http://build.staging.obanyc.com/archiva/repository/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots-mvn-repo</id>
+            <url>http://build.staging.obanyc.com/archiva/repository/snapshots/</url>
+        </snapshotRepository>
+        <site>
+            <id>${nyc_site_id}</id>
+            <url>${nyc_site_deployment_base}/onebusaway-nyc/${project.version}</url>
+        </site>
+    </distributionManagement>
+    <!-- Copied from onebusaway-nyc pom.xml -->
+    <repositories>
+        <repository>
+            <id>nyc-cache</id>
+            <url>http://build.staging.obanyc.com/archiva/repository/internal/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>snapshots.staging.obanyc.com</id>
+            <url>http://build.staging.obanyc.com/archiva/repository/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>releases.staging.obanyc.com</id>
+            <url>http://build.staging.obanyc.com/archiva/repository/releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!-- cached by nyc-cache -->
+        <!--
+        <repository><id>caucho</id><url>http://caucho.com/m2</url><releases><enabled>true</enabled></releases><snapshots><enabled>true</enabled></snapshots></repository><repository><id>ssj</id><url>http://maven.iscpif.fr/public</url><releases><enabled>true</enabled></releases><snapshots><enabled>false</enabled></snapshots></repository>-->
+        <!-- for UUID support -->
+        <!-- cached by nyc-cache -->
+        <!--
+        <repository><id>eaio.com</id><url>http://eaio.com/maven2</url><releases><enabled>true</enabled></releases><snapshots><enabled>false</enabled></snapshots></repository>-->
+        <!-- if nyc-cache is down is down, try camsys.com -->
+        <repository>
+            <id>camsys-cache</id>
+            <url>http://svn2.camsys.com/archiva/repository/internal/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!-- these have been phased out -->
+        <!--
+        <repository><id>releases.github.onebusaway.org</id><url>https://github.com/camsys/mvn-repo/raw/master/releases</url><releases><enabled>true</enabled></releases><snapshots><enabled>false</enabled></snapshots></repository><repository><id>snapshots.github.onebusaway.org</id><url>https://github.com/camsys/mvn-repo/raw/master/snapshots</url><releases><enabled>false</enabled></releases><snapshots><enabled>true</enabled></snapshots></repository>-->
+        <!-- this is inheritied implicitly -->
+        <!--
+        <repository><id>snapshots.nexus.onebusaway.org</id><url>http://nexus.onebusaway.org/content/repositories/snapshots/</url><releases><enabled>false</enabled></releases><snapshots><enabled>true</enabled></snapshots></repository><repository><id>public.nexus.onebusaway.org</id><url>http://nexus.onebusaway.org/content/groups/public/</url><releases><enabled>true</enabled></releases><snapshots><enabled>true</enabled></snapshots></repository>-->
+    </repositories>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.0.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
