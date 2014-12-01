@@ -82,6 +82,13 @@
         <!--
         <repository><id>snapshots.nexus.onebusaway.org</id><url>http://nexus.onebusaway.org/content/repositories/snapshots/</url><releases><enabled>false</enabled></releases><snapshots><enabled>true</enabled></snapshots></repository><repository><id>public.nexus.onebusaway.org</id><url>http://nexus.onebusaway.org/content/groups/public/</url><releases><enabled>true</enabled></releases><snapshots><enabled>true</enabled></snapshots></repository>-->
     </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.0</version>
+        </dependency>
+    </dependencies>
     <build>
         <pluginManagement>
             <plugins>
@@ -92,5 +99,14 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
