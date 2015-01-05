@@ -7,7 +7,7 @@
         <!-- took version from onebusaway-nyc -->
     </parent>
     <artifactId>onebusaway-tcip-apis</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>onebusaway-tcip-apis</name>
     <description>Parent POM module for all OneBusAway TCIP API modules.</description>
